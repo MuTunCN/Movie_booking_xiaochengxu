@@ -1,0 +1,62 @@
+<!--index.wxml-->
+<!--topbar -->
+<view class="navbar">
+    <text class="user_adress" space='ensp'>南京 <text id="sign">|</text></text>
+    <text wx:for="{{navbar}}" class="navbar_item {{currentTab==index ?'active':''}}" data-idx="{{index}}" bindtap="navbarTap" space='nbsp'>{{item}}</text>
+    <image src="{{QRcode_img}}"  style="width:50rpx;height:50rpx;" class="QRcode_btn" bindtap="QRcode"> </image>
+</view>
+
+<view style="margin-top:90rpx;" >
+    <scroll-view scroll-y="true" hidden='{{currentTab!=0}}' wx:for="{{movie_list}}" class="content">
+        <!--上映-->
+         <navigator url="../detail/detail?id={{item.id}}" open-type="navigate" hover-class="other-navigator-hover">
+        <view class="container"wx:if="{{item.preSale == 0}}" class="content_item">
+            <!-- 封面 -->
+            <view class="content_item_left">
+                <image src='{{item.img}}' mode='aspectFit' class="index_image" />
+            </view>
+            <!-- 信息 -->
+            <view class="content_item_center">
+                <text class="movie_title">{{item.nm}}\n</text>
+                <text class="movie_ver">{{item.ver}}\n</text>
+                <text class="movie_cat">{{item.cat}}\n</text>
+                <text class="movie_star">主演：{{item.star}}\n</text>
+                <text class="movie_rt">{{item.rt}}</text>
+            </view>
+            <!-- 评分 按钮 -->
+            <view class="content_item_right ">
+                <text class="movie_score">{{item.sc}}分</text>
+                <button class="buy_btn" type="warn" size="mini">购票</button>
+            </view>
+
+        </view>
+</navigator>
+    </scroll-view>
+
+
+    <!-- 预售-->
+    <scroll-view scroll-y="true" hidden='{{currentTab!=1}}' wx:for="{{movie_list}}" class="content">
+        
+        <view class="container" wx:if="{{item.preSale == 1}}" class="content_item">
+            <!-- 封面 -->
+            <view class="content_item_left">
+                <image src='{{item.img}}' mode='aspectFit' class="index_image" />
+            </view>
+            <!-- 信息 -->
+            <view class="content_item_center">
+                <text class="movie_title">{{item.nm}}\n</text>
+                <text class="movie_ver">{{item.ver}}\n</text>
+                <text class="movie_cat">{{item.cat}}\n</text>
+                <text class="movie_star">主演：{{item.star}}\n</text>
+                <text class="movie_rt">{{item.rt}}</text>
+            </view>
+            <!-- 评分 按钮 -->
+            <view class="content_item_right ">
+                <text class="want_2_watch">{{item.wish}}人\n想看</text>
+                <button class="buy_btn" type="primary" size="mini">预购</button>
+            </view>
+
+        </view>
+
+    </scroll-view>
+</view>

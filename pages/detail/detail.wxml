@@ -1,0 +1,32 @@
+<!--pages/detail/detail.wxml-->
+<view >
+  <video class="video" src="{{movie_info.vd}}"  poster='{{movie_info.img}}' controls ></video>
+</view>
+<view class="info">
+        <!-- 封面 -->
+        <view class="content_item_left">
+            <image src='{{movie_info.img}}' mode='aspectFit' class="index_image" />
+        </view>
+        <!-- 信息 -->
+        <view class="content_item_center">
+            <text class="movie_nm">{{movie_info.nm}}\n</text>
+            <text class="movie_sc">{{movie_info.sc}}\n</text>
+            <text class="movie_src_dur">{{movie_info.src}}/{{movie_info.dur}}分钟\n</text>
+            <text class="movie_rt">{{movie_info.rt}}\n</text>
+            <text class="movie_scm">"{{movie_info.scm}}"</text>
+        </view>
+</view>
+<view class='dra'>
+    {{movie_info.dra}}
+</view>
+<scroll-view scroll-x class="photos" >
+
+  <view class="photo" wx:for="{{movie_info.photos}}">
+    <image  src='{{movie_info.img}}' class='show_photo'></image>
+  </view>
+
+</scroll-view>
+
+<view class="bottom_btn">
+    <button type='warn'>优惠购票</button>
+</view>

@@ -1,0 +1,103 @@
+/**index.wxss**/
+/*顶部导航栏*/
+.navbar {
+    position: fixed;
+    padding-top: 20rpx;
+    padding-bottom: 20rpx;
+    width:100%;
+    top:0;
+    z-index: 999;
+    background-color: #fff;
+    border-bottom-style: solid;
+    border-bottom-width: 1rpx;
+    border-bottom-color: #d3d7d4;
+}
+/*用户所在地址*/
+.user_adress {
+    padding-left: 10rpx;
+    padding-right: 150rpx;
+    float: left;
+}
+/*二维码按钮*/
+.QRcode_btn {
+    float: right;
+    padding-right: 10rpx;
+}
+/*导航栏*/
+.navbar_item {
+    padding-left: 20rpx;
+}
+.navbar .navbar_item.active{  
+  color: #56abe4;  
+}  
+ 
+/* | */
+#sign {
+    color: #f6f5ec
+}
+/*image*/
+.index_image {
+    width:180rpx;
+    height:250rpx
+}
+/*内容格*/
+.content {
+    width: 100%;
+}
+.content_item {
+    width: 100%; 
+    height: 270rpx; 
+
+    display: inline-block;
+    border-bottom-style: solid;
+    border-bottom-width: 1rpx;
+    border-bottom-color: #d3d7d4;
+}
+.content_item_left {
+    padding-left: 10rpx;
+    float:left;
+}
+.content_item_center {
+    position: absolute;
+    left: 200rpx;
+    height: 260rpx;
+    width: 405rpx;
+    float:left;
+    line-height: 40rpx;
+}
+.movie_title {
+    font-size: 31rpx;
+    font-weight: bold;
+}
+.movie_ver,.movie_rt {
+    font-size: 24rpx;
+    color: #999d9c
+}
+.movie_star,.movie_cat {
+    font-size: 28rpx;
+}
+.content_item_right {
+    float:right;
+    height: 260rpx;
+    width: 145rpx;
+    padding-right: 10rpx;
+}
+/*分数*/
+.movie_score {
+    position: absolute;
+    top: 30rpx;
+    padding-left: 40rpx;
+
+}
+.want_2_watch {
+    position: absolute;
+    top: 30rpx;
+    padding-left: 40rpx;
+    font-size: 30rpx;
+}
+/*购买按钮*/
+.buy_btn {
+    animation: absolute;
+    top: 150rpx;
+    
+}

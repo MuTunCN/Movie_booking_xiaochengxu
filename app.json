@@ -1,0 +1,35 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/userInfo/userInfo",
+    "pages/logs/logs",
+    "pages/detail/detail"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#56abe4",
+    "navigationBarTitleText": "狗眼电影",
+    "navigationBarTextStyle":"black"
+  },
+"tabBar":{ 
+    "color": "#666",
+    "selectedColor": "#56abe4",
+    "backgroundColor": "#fff",
+    "borderStyle": "black",
+    "list": [
+        {
+            "pagePath": "pages/index/index",
+            "iconPath": "images/tabbar/index.png",
+            "selectedIconPath": "images/tabbar/index_c.png",
+            "text": "电影资讯"
+        },
+        {
+            "pagePath": "pages/userInfo/userInfo",
+            "iconPath": "images/tabbar/account.png",
+            "selectedIconPath": "images/tabbar/account_c.png",
+            "text": "个人中心"
+        }
+    ],
+    "position": "bottom"
+}
+}
