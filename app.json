@@ -3,13 +3,14 @@
     "pages/index/index",
     "pages/userInfo/userInfo",
     "pages/logs/logs",
-    "pages/detail/detail"
+    "pages/detail/detail",
+    "pages/login/login"
   ],
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#56abe4",
     "navigationBarTitleText": "狗眼电影",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle":"white"
   },
 "tabBar":{ 
     "color": "#666",

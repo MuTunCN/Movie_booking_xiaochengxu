@@ -11,6 +11,9 @@
     width:100%;
     height:260rpx;
     margin-bottom: 20rpx;
+    border-bottom-style: solid;
+    border-bottom-color: #f6f5ec;
+    border-bottom-width: 3rpx;
 }
 .content_item_left {
     padding-left: 10rpx;
@@ -23,6 +26,7 @@
     width: 550rpx;
     float:left;
     line-height: 40rpx;
+    
 }
 .photos {
     white-space: nowrap;
@@ -43,6 +47,32 @@
     z-index: 999;
     background: red;
 }
-.dra {
+.movie_nm {
+    font-size: 45rpx;
+    font-weight: bold;
+}
+.movie_scm {
+    font-size: 32rpx;
+    color: #999d9c
+}
+.movie_rt,.movie_src_dur {
+    font-size: 35rpx;
     
+}
+.movie_sc {
+    
+    font-size: 36rpx;
+    font-weight: bold;
+    color: red;
+}
+.dra {
+    font-size: 35rpx;
+    font-style: oblique;
+    color: #999d9c
+}
+.dra_view {
+    border-bottom-style: solid;
+    border-bottom-color: #f6f5ec;
+    border-bottom-width: 3rpx;
+    margin-bottom: 20rpx;
 }

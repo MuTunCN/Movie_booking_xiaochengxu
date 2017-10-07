@@ -1,2 +1,20 @@
 <!--pages/userInfo/userInfo.wxml-->
-<text>pages/userInfo/userInfo.wxml</text>
+<view class='main'>
+<image src='{{userInfo.avatarUrl}}'  class='image'></image>
+
+
+<text>\n性别：{{userInfo.gender ? "男" : "女"}}\n </text>
+<text>名称：{{ userInfo.nickName}}\n</text>
+<text>地区：{{ userInfo.province?userInfo.province :"未找到"}}\n</text>
+<text>城市：{{ userInfo.city?  userInfo.city :"未找到"}}\n</text>
+<text>国家：{{ userInfo.country?userInfo.country :"未找到"}}\n</text>
+<text>品牌：{{ systemInfo.brand}}\n</text>
+<text>型号：{{ systemInfo.model}}\n</text>
+<text>语言：{{ systemInfo.language}}\n</text>
+<text>屏幕：{{ systemInfo.screenHeight}}X{{ systemInfo.screenWidth}}\n</text>
+<text>版本：{{ systemInfo.version}}\n</text>
+<text>SDK版本：{{ systemInfo.SDKversion ?systemInfo.SDKversion :"未找到" }}\n</text>
+<text>系统：{{ systemInfo.system}}\n</text>
+<text>平台：{{ systemInfo.platform}}\n</text>
+<text>像素比：{{ systemInfo.pixelRatio}}\n</text>
+</view>

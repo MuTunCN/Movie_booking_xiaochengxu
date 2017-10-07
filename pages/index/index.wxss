@@ -101,3 +101,9 @@
     top: 150rpx;
     
 }
+.contact {
+    position: fixed;
+    bottom: 30rpx;
+    right: 20rpx;
+    z-index: 999;
+}

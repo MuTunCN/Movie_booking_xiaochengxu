@@ -10,6 +10,37 @@ Page({
      currentTab: 0,
      movie_list:""
   },
+  onShareAppMessage: function(res) {
+      if (res.from === 'button') {
+          // 来自页面内转发按钮
+          console.log(res.target)
+      }
+      return {
+          title: '最新上映的电影',
+          path: '/page/user?id=1234',
+          success: function (res) {
+              // 转发成功
+              wx:wx.showToast({
+                  title: '转发成功',
+                  icon: 'success',
+                  image: '',
+                  duration: 1000,
+                  mask: true,
+                  success: function(res) {},
+                  fail: function(res) {},
+                  complete: function(res) {},
+              })
+          },
+          fail: function (res) {
+              // 转发失败
+              wx:wx.showToast({
+                  title: '转发取消',
+                  icon:"success",
+                  duration: 1000
+              })
+          }
+      }
+  },
   navbarTap: function(e) {
     this.setData({
         currentTab: e.currentTarget.dataset.idx  

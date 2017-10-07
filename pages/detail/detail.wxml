@@ -10,23 +10,27 @@
         <!-- 信息 -->
         <view class="content_item_center">
             <text class="movie_nm">{{movie_info.nm}}\n</text>
-            <text class="movie_sc">{{movie_info.sc}}\n</text>
-            <text class="movie_src_dur">{{movie_info.src}}/{{movie_info.dur}}分钟\n</text>
+            <text class="movie_sc">{{movie_info.preSale ==0? movie_info.sc : "暂无"}}</text><text style='font-size:20rpx;'>分\n</text>
+            <text class="movie_src_dur">{{ movie_info.src}}/{{movie_info.dur}}分钟\n</text>
             <text class="movie_rt">{{movie_info.rt}}\n</text>
-            <text class="movie_scm">"{{movie_info.scm}}"</text>
+            <text wx:if="{{movie_info.scm}}" class="movie_scm">"{{movie_info.scm}}"</text>
+            <text wx:else class="movie_scm"></text>
         </view>
 </view>
-<view class='dra'>
-    {{movie_info.dra}}
+<view class="dra_view">
+<text>内容简介：\n</text>
+   <text  class='dra'>" {{movie_info.dra}}"</text>
 </view>
+<text>剧照浏览：\n</text>
 <scroll-view scroll-x class="photos" >
-
+    
   <view class="photo" wx:for="{{movie_info.photos}}">
     <image  src='{{movie_info.img}}' class='show_photo'></image>
   </view>
-
+<text>\n\n\n\n\n\n</text>
 </scroll-view>
 
 <view class="bottom_btn">
-    <button type='warn'>优惠购票</button>
+    <button wx:if="{{movie_info.preSale ==0}}" type='warn'>优惠购票</button>
+    <button wx:else type='primary'>预约购票</button>
 </view>

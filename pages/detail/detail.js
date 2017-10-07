@@ -7,7 +7,6 @@ Page({
   data: {
     movie_info:""
   },
-
   /**
    * 生命周期函数--监听页面加载
    */
@@ -16,7 +15,7 @@ Page({
         wx:wx.request({
             url: "https://m.maoyan.com/movie/"+options.id+".json",
             success: function(res) {
-                console.log(res.data.data.MovieDetailModel)
+                //console.log(res.data.data.MovieDetailModel)
                 that.setData({
                     movie_info: res.data.data.MovieDetailModel
                 })
@@ -71,7 +70,33 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
-  
+  onShareAppMessage: function (res) {
+      var movie = this.data.movie_info
+      //console.log()
+      return {
+          title: '我推荐电影 '+movie.nm+"，"+movie.wish+"人想看" ,
+          path: '/page/user?id=1234',
+          success: function (res) {
+              // 转发成功
+              wx: wx.showToast({
+                  title: '转发成功',
+                  icon: 'success',
+                  image: '',
+                  duration: 1000,
+                  mask: true,
+                  success: function (res) { },
+                  fail: function (res) { },
+                  complete: function (res) { },
+              })
+          },
+          fail: function (res) {
+              // 转发失败
+              wx: wx.showToast({
+                  title: '转发取消',
+                  icon: "success",
+                  duration: 1000
+              })
+          }
+      }
   }
 })

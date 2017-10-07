@@ -5,14 +5,44 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    userInfo:"",
+    systemInfo: ""
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+      var that = this
+      wx.login({
+          success: function (res) {
+              wx: wx.getUserInfo({
+                  withCredentials: true,
+                  lang: 'EN',
+                  success: function (res) {
+                      //console.log()
+                      that.setData({
+                          userInfo: res.userInfo
+                      })
+                  },
+                  fail: function (res) { },
+                  complete: function (res) { },
+              })
+          },
+          fail: function (res) { },
+          complete: function (res) { },
+      })
+      wx.getSystemInfo({
+          success: function(res) {
+              console.log(res)
+              that.setData({
+                  systemInfo: res
+                  
+              })
+          },
+          fail: function(res) {},
+          complete: function(res) {},
+      })
   },
 
   /**
@@ -40,7 +70,7 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-  
+      
   },
 
   /**

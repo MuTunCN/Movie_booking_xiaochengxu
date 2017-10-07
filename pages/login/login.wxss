@@ -1,0 +1,8 @@
+/* pages/login/login.wxss */
+
+.btn {
+    position: fixed;
+    left: 40%;
+    top: 48%;
+    width: 200rpx;
+}

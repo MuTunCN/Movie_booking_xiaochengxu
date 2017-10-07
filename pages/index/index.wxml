@@ -33,10 +33,17 @@
 </navigator>
     </scroll-view>
 
+<contact-button 
+  type="default-dark" 
+  size="30"
+  session-from="weapp"
+  class = "contact"
+>
+</contact-button>
 
     <!-- 预售-->
     <scroll-view scroll-y="true" hidden='{{currentTab!=1}}' wx:for="{{movie_list}}" class="content">
-        
+        <navigator url="../detail/detail?id={{item.id}}" open-type="navigate" hover-class="other-navigator-hover">
         <view class="container" wx:if="{{item.preSale == 1}}" class="content_item">
             <!-- 封面 -->
             <view class="content_item_left">
@@ -57,6 +64,6 @@
             </view>
 
         </view>
-
+        </navigator>
     </scroll-view>
 </view>
